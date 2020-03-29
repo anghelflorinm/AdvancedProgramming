@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <BorderPane prefHeight="572.0" prefWidth="615.0">
+         <top>
+            <Pane fx:id="coPane" prefHeight="72.0" prefWidth="615.0" style="-fx-background-color: #5F4B8BFF;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="9.0" layoutY="7.0" prefHeight="34.0" prefWidth="31.0" style="-fx-text-fill: #E69A8DFF;" text=" Size:" />
+                  <TextField fx:id="actiontarget" layoutX="40.0" layoutY="11.0" onAction="#handleSetSizeTextField" />
+               </children>
+            </Pane>
+         </top>
+         <bottom>
+            <Pane prefHeight="61.0" prefWidth="615.0" style="-fx-background-color: #5F4B8BFF;" BorderPane.alignment="CENTER">
+               <children>
+                  <Button layoutX="549.0" layoutY="18.0" mnemonicParsing="false" onAction="#handleExitButton" style="-fx-background-color: #E69A8DFF; -fx-text-fill: #5F4B8BFF;" text="Exit" />
+                  <Button layoutX="490.0" layoutY="18.0" mnemonicParsing="false" onAction="#handleResetButton" style="-fx-background-color: #E69A8DFF; -fx-text-fill: #5F4B8BFF;" text="Reset" />
+                  <Button layoutX="430.0" layoutY="18.0" mnemonicParsing="false" onAction="#handleLoadButton" style="-fx-background-color: #E69A8DFF; -fx-text-fill: #5F4B8BFF;" text="Load" />
+                  <Button layoutX="368.0" layoutY="18.0" mnemonicParsing="false" onAction="#handleSaveButton" style="-fx-background-color: #E69A8DFF; -fx-text-fill: #5F4B8BFF;" text="Save" />
+               </children>
+            </Pane>
+         </bottom>
+         <center>
+            <Pane fx:id="drPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E69A8DFF;" BorderPane.alignment="CENTER">
+               <children>
+                  <Canvas fx:id="canvas" height="437.0" layoutX="-2.0" layoutY="1.0" onMouseClicked="#handleDrawShape" width="615.0" />
+               </children></Pane>
+         </center>
+            </BorderPane>
+   </children>
+</AnchorPane>
