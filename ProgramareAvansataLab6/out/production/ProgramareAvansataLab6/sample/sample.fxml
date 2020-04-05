@@ -11,7 +11,11 @@
             <Pane fx:id="coPane" prefHeight="72.0" prefWidth="615.0" style="-fx-background-color: #5F4B8BFF;" BorderPane.alignment="CENTER">
                <children>
                   <Label layoutX="9.0" layoutY="7.0" prefHeight="34.0" prefWidth="31.0" style="-fx-text-fill: #E69A8DFF;" text=" Size:" />
-                  <TextField fx:id="actiontarget" layoutX="40.0" layoutY="11.0" onAction="#handleSetSizeTextField" />
+                  <TextField fx:id="actiontarget" layoutX="40.0" layoutY="11.0" onAction="#handleSetSizeTextField" prefHeight="25.0" prefWidth="57.0" />
+                  <Label layoutX="353.0" layoutY="7.0" prefHeight="34.0" prefWidth="187.0" style="-fx-text-fill: #E69A8DFF;" text=" Number of Sides (Polygon Only):" />
+                  <TextField fx:id="actiontarget1" layoutX="545.0" layoutY="11.0" onAction="#setSidesConfig" prefHeight="25.0" prefWidth="57.0" />
+                  <Button layoutX="153.0" layoutY="19.0" mnemonicParsing="false" onAction="#setDrawConfig" prefHeight="45.0" prefWidth="86.0" style="-fx-background-color: #E69A8DFF; -fx-text-fill: #5F4B8BFF;" text="Draw" />
+                  <Button layoutX="265.0" layoutY="19.0" mnemonicParsing="false" onAction="#setDeleteConfig" prefHeight="45.0" prefWidth="86.0" style="-fx-background-color: #E69A8DFF; -fx-text-fill: #5F4B8BFF;" text="Delete" />
                </children>
             </Pane>
          </top>
@@ -31,6 +35,23 @@
                   <Canvas fx:id="canvas" height="437.0" layoutX="-2.0" layoutY="1.0" onMouseClicked="#handleDrawShape" width="615.0" />
                </children></Pane>
          </center>
+         <left>
+            <Pane prefHeight="439.0" prefWidth="101.0" style="-fx-background-color: #5F4B8BFF; -fx-border-color: #5F4B8BFF; -fx-border-width: 3;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="24.0" layoutY="26.0" style="-fx-text-fill: #E69A8DFF;" text="Shapes:" />
+                  <Button layoutX="11.0" layoutY="58.0" mnemonicParsing="false" onAction="#setCircle" prefHeight="25.0" prefWidth="67.0" style="-fx-background-color: #E69A8DFF; -fx-text-fill: #5F4B8BFF;" text="Circle" />
+                  <Button layoutX="11.0" layoutY="91.0" mnemonicParsing="false" onAction="#setPolygon" prefHeight="25.0" prefWidth="67.0" style="-fx-background-color: #E69A8DFF; -fx-text-fill: #5F4B8BFF;" text="Polygon" />
+                  <Label layoutX="21.0" layoutY="141.0" style="-fx-text-fill: #E69A8DFF;" text="Color Fill:" />
+                  <Button layoutX="11.0" layoutY="167.0" mnemonicParsing="false" onAction="#setRed" prefHeight="25.0" prefWidth="67.0" style="-fx-background-color: #E69A8DFF; -fx-text-fill: #5F4B8BFF;" text="Red" />
+                  <Button layoutX="11.0" layoutY="205.0" mnemonicParsing="false" onAction="#setGreen" prefHeight="25.0" prefWidth="67.0" style="-fx-background-color: #E69A8DFF; -fx-text-fill: #5F4B8BFF;" text="Green" />
+                  <Button layoutX="11.0" layoutY="242.0" mnemonicParsing="false" onAction="#setBlue" prefHeight="25.0" prefWidth="67.0" style="-fx-background-color: #E69A8DFF; -fx-text-fill: #5F4B8BFF;" text="Blue" />
+                  <Button layoutX="11.0" layoutY="278.0" mnemonicParsing="false" onAction="#setRandom" prefHeight="25.0" prefWidth="67.0" style="-fx-background-color: #E69A8DFF; -fx-text-fill: #5F4B8BFF;" text="Random" />
+                  <Label layoutX="15.0" layoutY="322.0" style="-fx-text-fill: #E69A8DFF;" text="Fill Select:" />
+                  <Button layoutX="16.0" layoutY="347.0" mnemonicParsing="false" onAction="#setFillConfig" style="-fx-background-color: #E69A8DFF; -fx-text-fill: #5F4B8BFF;" text="Shape" />
+                  <Button layoutX="15.0" layoutY="383.0" mnemonicParsing="false" onAction="#setStrokeConfig" style="-fx-background-color: #E69A8DFF; -fx-text-fill: #5F4B8BFF;" text="Stroke" />
+               </children>
+            </Pane>
+         </left>
             </BorderPane>
    </children>
 </AnchorPane>
