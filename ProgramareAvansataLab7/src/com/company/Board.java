@@ -6,6 +6,24 @@ import java.util.TreeSet;
 public class Board {
     private Set<Token> tokenSet;
     private Integer maxToken;
+    private Integer nextPlayer;
+    private Integer nrOfPlayers;
+
+    public Integer getNextPlayer() {
+        return nextPlayer;
+    }
+
+    public void setNextPlayer(Integer nextPlayer) {
+        this.nextPlayer = nextPlayer;
+    }
+
+    public Integer getNrOfPlayers() {
+        return nrOfPlayers;
+    }
+
+    public void setNrOfPlayers(Integer nrOfPlayers) {
+        this.nrOfPlayers = nrOfPlayers;
+    }
 
     public Integer getProgressionLength() {
         return progressionLength;
@@ -24,6 +42,7 @@ public class Board {
         }
         maxToken = maxNrTokens;
         this.progressionLength = progressionLength;
+        nrOfPlayers = 0;
     }
 
     public Integer getTokensLeft() {

@@ -7,6 +7,7 @@ public abstract class Player implements Runnable {
     protected Set<Player> playerSet;
     protected final Board board;
     protected boolean running;
+    protected int id;
 
     public String getName() {
         return name;
@@ -23,13 +24,22 @@ public abstract class Player implements Runnable {
     @Override
     public void run() {
         while (running) {
-            addToken();
-            if (running) {
-                checkArithmeticProgression();
-            }
             synchronized (board) {
+                while (board.getNextPlayer() != id) {
+                    try {
+                        board.wait();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
                 if (!running) {
+                    board.setNextPlayer((board.getNextPlayer() + 1) % board.getNrOfPlayers());
+                    board.notifyAll();
                     break;
+                }
+                addToken();
+                if (running) {
+                    checkArithmeticProgression();
                 }
                 if (board.getTokensLeft() == 0) {
                     System.out.println("No tokens left");
@@ -37,6 +47,8 @@ public abstract class Player implements Runnable {
                         player.setRunning(false);
                     }
                 }
+                board.setNextPlayer((board.getNextPlayer() + 1) % board.getNrOfPlayers());
+                board.notifyAll();
             }
         }
     }
@@ -56,6 +68,7 @@ public abstract class Player implements Runnable {
                             player.setRunning(false);
                         }
                         System.out.println("Player " + this.getName() + " won!");
+                        return;
                     }
                     val1 = val2;
                     val2 = val1 + diff;
@@ -65,11 +78,13 @@ public abstract class Player implements Runnable {
         }
     }
 
-    public Player(String name, Board board, Set<Player> playerSet) {
+    public Player(String name, Board board, Set<Player> playerSet, int id) {
         tokenSet = new TreeSet<>();
         this.board = board;
         this.playerSet = playerSet;
         running = true;
         this.name = name;
+        this.board.setNrOfPlayers(board.getNrOfPlayers() + 1);
+        this.id = id;
     }
 }
