@@ -6,10 +6,10 @@ public class Main {
 	// write your code here
         Database database = Database.getInstance();
         ArtistController artistController = new ArtistController();
-        artistController.create("Horia Brenciu", "Romania");
-        artistController.findByName("Horia Brenciu");
+       // artistController.create("Smiley", "Romania");
+        artistController.findByName("Smiley");
         AlbumController albumController = new AlbumController();
-        albumController.create("Am castigat!", 2, 2012);
-        albumController.findByArtist(2);
+        albumController.create("Am pierdut!", 2, 2012);
+        albumController.findByArtist(6);
     }
 }
