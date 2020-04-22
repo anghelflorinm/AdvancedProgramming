@@ -26,7 +26,9 @@ public class Database {
             Statement statement = connection.createStatement();
             statement.execute(query);
             connection.commit();
+            statement.close();
         } catch (SQLException e) {
+            System.out.println(query);
             e.printStackTrace();
         }
     }
@@ -35,6 +37,7 @@ public class Database {
             Statement statement = connection.createStatement();
             return statement.executeQuery(query);
         } catch (SQLException e) {
+            System.out.println(query);
             e.printStackTrace();
         }
         return null;

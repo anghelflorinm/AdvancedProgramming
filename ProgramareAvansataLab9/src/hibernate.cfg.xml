@@ -4,9 +4,15 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name="connection.url"/>
-        <property name="connection.driver_class"/>
-        <!-- <property name="connection.username"/> -->
+        <property name="connection.url">jdbc:oracle:thin:@localhost:1521:XE</property>
+        <property name="connection.driver_class">oracle.jdbc.OracleDriver</property>
+        <property name="hibernate.connection.username">student</property>
+        <property name="hibernate.connection.password">STUDENT</property>
+        <property name="hibernate.dialect">dialect.CustomOracleDialect</property>
+
+        <mapping class="entity.Album"/>
+        <mapping class="entity.Artist"/>
+
         <!-- <property name="connection.password"/> -->
 
         <!-- DB schema will be updated if needed -->

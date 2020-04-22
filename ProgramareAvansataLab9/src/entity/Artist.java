@@ -5,6 +5,9 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "ARTISTS", schema = "STUDENT", catalog = "")
+@NamedQueries({
+        @NamedQuery(name = "Artist.findByName",
+                query = "SELECT p FROM Artist p WHERE p.name=:name")})
 public class Artist {
     private long id;
     private String name;
