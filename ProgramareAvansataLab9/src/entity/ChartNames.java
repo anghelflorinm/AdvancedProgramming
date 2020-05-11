@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
+
 @Table(name = "CHART_NAMES", schema = "STUDENT", catalog = "")
 public class ChartNames {
     private long chartId;

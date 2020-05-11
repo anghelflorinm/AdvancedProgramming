@@ -1,4 +1,5 @@
 package repo;
 
-public class AbstractFactory {
+public abstract class AbstractFactory {
+    public abstract AlbumHandler produceAlbumHandler();
 }

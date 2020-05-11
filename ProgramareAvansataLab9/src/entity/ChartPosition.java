@@ -4,6 +4,12 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
+@NamedQueries({
+        @NamedQuery(name = "Charts.findByPosiiton",
+                query = "SELECT p FROM ChartPosition p WHERE p.position=:position"),
+        @NamedQuery(name = "Album.findByArtist",
+                query = "SELECT p FROM Album p WHERE p.artistID=:id")
+})
 @Table(name = "CHART_POSITION", schema = "STUDENT", catalog = "")
 @IdClass(ChartPositionPK.class)
 public class ChartPosition {

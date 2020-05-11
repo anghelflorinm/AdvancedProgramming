@@ -10,7 +10,7 @@ import java.util.Objects;
 import java.util.List;
 
 
-public class AlbumRepository {
+public class AlbumRepository  implements AlbumHandler{
     private EntityManager entityManager;
 
     public AlbumRepository() {

@@ -18,6 +18,17 @@ public class Album implements Serializable {
     private Long releaseYear;
     private long artistID;
 
+    public Album(long id, String name, long artistId, Long releaseYear) {
+        this.id = id;
+        this.name = name;
+        this.artistID = artistId;
+        this.releaseYear = releaseYear;
+    }
+
+    public Album(){
+
+    }
+
     @Id
     @Column(name = "ID")
     public long getId() {

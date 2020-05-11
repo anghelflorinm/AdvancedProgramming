@@ -31,9 +31,6 @@ class ClientThread extends Thread {
                 out.println(raspuns);
                 out.flush();
             }
-            raspuns = "Server received the request...";
-            out.println(raspuns);
-            out.flush();
         } catch (IOException e) {
             System.err.println("Communication error... " + e);
         } finally {
